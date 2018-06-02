@@ -1,3 +1,5 @@
+#SAVE IN MYSQL STREAMING API
+
 import pymysql
 import tweepy
 import time

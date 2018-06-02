@@ -1,3 +1,5 @@
+#REST API SAVE MYSQL
+
 import tweepy
 import csv
 import pandas as pd
@@ -16,12 +18,11 @@ cur = conn.cursor()
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth,wait_on_rate_limit=True)
-#####United Airlines
-# Open/Create a file to append data
+
 csvFile = open('textweet.csv', 'a')
 csvFile2 = open('fullinfo.csv', 'a')
 
-#Use csv Writer
+
 csvWriter = csv.writer(csvFile)
 csvWriter2 = csv.writer(csvFile2)
 
