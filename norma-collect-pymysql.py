@@ -30,10 +30,13 @@ places = api.geo_search(query="Malaysia", granularity="country")
 place_id = places[0].id
 count=0
 for tweet in tweepy.Cursor(api.search,q=["traffic"],count=10, geocode="3.073281,101.518461,50km",tweet_mode="extended",retweeted=True).items(2000):
+for tweet in tweepy.Cursor(api.search,q=["traffic","traffic jammed","traffic light"],count=10, geocode="3.073281,101.518461,50km",tweet_mode="extended",retweeted=True).items(2000):
 	if (not tweet.retweeted) and ('RT @' not in tweet.full_text):
 		print ("{}) Created at : {}\nFull text : {}\nLocation : {}\n\n\n".format(count,tweet.created_at, tweet.full_text, tweet.user.location))
 		#csvWriter.writerow([tweet.full_text.encode('utf-8'),tweet.user.location])
 		#csvWriter2.writerow([tweet])
 		cur.execute("INSERT INTO tweetdata (`text`) VALUES (%s)", (tweet))
         conn.commit()
-		count+=1
+		count+=1		count+=1
+	conn.commit()
+x
