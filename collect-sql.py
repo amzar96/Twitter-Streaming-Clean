@@ -10,12 +10,14 @@ from tweepy.streaming import StreamListener
 import pymysql.cursors
 
 
-ckey= 
-csecret= 
-atoken=
-asecret=
+ckey= 'CHky1yfiABs1YaIGdZfK98Zhg'
+csecret= 'tVBpes9lDtvC1F56ov4a4y3msUmeyMYVtVAMZ962UPi93j3uaK'
+atoken= '966703597625815040-aiC8veIjwoIBxTXG5kPaQHCoED2ZtnF'
+asecret= 'CqJDVqD109b14JTe3gpznBzftWNrhpioZmRLlZUbCbPKY'
 
-conn = pymysql.connect(host='localhost', port=3306, user='root', use_unicode=True, passwd='admin1234', db='tweet',charset='utf8')
+
+
+conn = pymysql.connect(host='localhost', port=3306, user='root', use_unicode=True, passwd='admin1234', db='twitter',charset='utf8')
 cur = conn.cursor()
 
 if conn.open:
